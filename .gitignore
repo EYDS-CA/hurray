@@ -12,6 +12,11 @@ node_modules
 *.ds_store
 .env
 
+# Secret things
+credentials.json
+output.csv
+token.json
+
 # Icon must end with two \r
 Icon
 

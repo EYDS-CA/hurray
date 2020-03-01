@@ -23,22 +23,18 @@ const requestToken = async () => {
   await fs.writeFile('token.json', JSON.stringify(token));
 };
 
-const getSheetContent = async () => {
+const getSheetContent = async (id, ranges) => {
+  const rangeArray = Array.isArray(ranges) ? ranges : [ranges]; // Force ranges to be array
   const client = await authClient();
   const token = await fs.readFile('token.json');
   client.setCredentials(JSON.parse(token));
   const sheets = google.sheets('v4');
-  const res = await sheets.spreadsheets.values.get({
-    spreadsheetId: '1aJOtfVhFacpWEpKifFzKegI0x49_rqbhiR0o3fPwneg',
-    range: 'Sheet1!A2:C',
+  const response = await sheets.spreadsheets.values.batchGet({
+    spreadsheetId: id,
+    ranges: rangeArray,
     auth: client,
   });
-  const rows = res.data.values;
-  if (!rows.length) throw Error('No data');
-  const headers = 'Name, Preferred Name, Workiversary';
-  const content = rows.map((row) => `${row[0]}, ${row[1]}, ${row[2]}`).join('\n');
-  const csv = `${headers}\n${content}\n`;
-  return csv;
+  return response.data.valueRanges;
 };
 
 module.exports = { getSheetContent };

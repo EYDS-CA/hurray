@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "dayjs": "^1.8.21",
     "express": "^4.17.1",
     "googleapis": "^39.2.0",
     "readline-sync": "^1.4.10"

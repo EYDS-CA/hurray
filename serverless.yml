@@ -1,0 +1,21 @@
+service:
+  name: fresh-hurray
+
+plugins:
+  - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ca-central-1
+
+functions:
+  dispatcher:
+    handler: handler.dispatcher
+    events:
+      - http:
+          method: post
+          path: /slack/events
+      - http:
+          method: post
+          path: /block/actions

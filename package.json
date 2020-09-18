@@ -8,15 +8,18 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "dayjs": "^1.8.21",
-    "express": "^4.17.1",
-    "googleapis": "^39.2.0",
-    "readline-sync": "^1.4.10"
+    "@slack/bolt": "^2.3.0",
+    "aws-serverless-express": "^3.3.8",
+    "dayjs": "^1.8.36",
+    "googleapis": "^39.2.0"
   },
   "devDependencies": {
-    "eslint": "^6.1.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.20.1"
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "readline-sync": "^1.4.10",
+    "serverless": "^2.1.1",
+    "serverless-dotenv-plugin": "^3.0.0"
   },
   "repository": {
     "type": "git",

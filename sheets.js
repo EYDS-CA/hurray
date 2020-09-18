@@ -20,7 +20,7 @@ const requestToken = async () => {
   });
   const code = readline.question(`Visit ${authUrl} and enter code: `);
   const token = await client.getToken(code);
-  await fs.writeFile('token.json', JSON.stringify(token));
+  await fs.writeFile('token.json', JSON.stringify(token.tokens));
 };
 
 const getSheetContent = async (id, ranges) => {
@@ -39,8 +39,7 @@ const getSheetContent = async (id, ranges) => {
 
 module.exports = { getSheetContent };
 
-if (require.main === module) {
-  // Module run directly, generate token
+if (require.main === module) { // Script run directly, generate token
   (async () => {
     await requestToken();
   })();

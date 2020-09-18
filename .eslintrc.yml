@@ -1,3 +1,7 @@
 extends: [ airbnb-base ]
 env:
   node: true
+rules:
+  no-console:
+    - error
+    - allow: [ error ]

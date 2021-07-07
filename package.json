@@ -2,13 +2,24 @@
   "name": "slackbot",
   "version": "1.0.0",
   "description": "A Slackbot that reads from a Google Sheet to post scheduled, fun updates.",
-  "main": "index.js",
-  "dependencies": {
-    "googleapis": "^39.2.0"
-  },
-  "devDependencies": {},
   "scripts": {
+    "start": "node server.js",
+    "token": "node sheets.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@slack/bolt": "^2.3.0",
+    "aws-serverless-express": "^3.3.8",
+    "dayjs": "^1.8.36",
+    "googleapis": "^59.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "readline-sync": "^1.4.10",
+    "serverless": "^2.1.1",
+    "serverless-dotenv-plugin": "^3.0.0"
   },
   "repository": {
     "type": "git",

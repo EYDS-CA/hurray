@@ -4,7 +4,7 @@
   "description": "A Slackbot that reads from a Google Sheet to post scheduled, fun updates.",
   "main": "index.js",
   "dependencies": {
-    "googleapis": "^39.2.0"
+    "googleapis": "^118.0.0"
   },
   "devDependencies": {},
   "scripts": {
